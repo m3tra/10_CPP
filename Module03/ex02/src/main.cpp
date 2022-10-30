@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:40:25 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/26 18:20:25 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/30 06:36:58 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main(void) {
 	fTrap.takeDamage(4);
 	fTrap.beRepaired(8);
 	fTrap.highFivesGuys();
+
+	std::cout << std::endl;
 
 	return (0);
 }

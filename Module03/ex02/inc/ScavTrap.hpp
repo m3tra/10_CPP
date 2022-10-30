@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:16:25 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/26 17:51:33 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/30 06:11:41 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ using std::string;
 
 class	ScavTrap : public ClapTrap {
 
+private:
+
+	ScavTrap();
+
 public:
 
 	ScavTrap(const string& name);
+	ScavTrap(const ScavTrap& other);
+	ScavTrap& operator = (const ScavTrap& other);
 	~ScavTrap();
 
 	void	guardGate();

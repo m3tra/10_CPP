@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:40:25 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/26 17:46:48 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/30 06:37:04 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int main(void) {
 	sTrap.takeDamage(3);
 	sTrap.beRepaired(7);
 	sTrap.guardGate();
+
+	std::cout << std::endl;
 
 	return (0);
 }

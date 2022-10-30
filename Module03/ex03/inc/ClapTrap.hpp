@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:16:25 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/26 18:18:31 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/30 05:57:49 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ protected:
 public:
 
 	ClapTrap(const string& name);
+	ClapTrap(const ClapTrap& other);
+	ClapTrap& operator = (const ClapTrap& other);
 	~ClapTrap();
 
 	string	getName(void) const;
