@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 06:04:14 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/31 06:03:28 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-Animal::Animal() : type("no_type") {
+WrongCat::WrongCat() : WrongAnimal() {
+	this->type = "WrongCat";
+
 	std::cout << PURPLE << "Default constructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
-Animal::Animal(const Animal& other) : type(other.type) {
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal() {
+	this->type = other.type;
+
 	std::cout << PURPLE << "Copy constructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
-Animal& Animal::operator = (const Animal& other) {
+WrongCat& WrongCat::operator = (const WrongCat& other) {
 	this->type = other.type;
 
 	std::cout << PURPLE << "Copy assignment of ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
@@ -40,9 +44,9 @@ Animal& Animal::operator = (const Animal& other) {
 	return *this;
 }
 
-Animal::~Animal() {
+WrongCat::~WrongCat() {
 	std::cout << PURPLE << "Destructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
@@ -50,14 +54,8 @@ Animal::~Animal() {
 
 
 
-string	Animal::getType() const {
-	return (this->type);
-}
-
-
-
-void	Animal::makeSound() const {
-	std::cout << YELLOW << "[Animal]: ";
-	std::cout << WHITE << "*random_sound*";
+void	WrongCat::makeSound() const {
+	std::cout << YELLOW << "[WrongCat]: ";
+	std::cout << WHITE << "*rrrrrrrr*";
 	std::cout << std::endl;
 }

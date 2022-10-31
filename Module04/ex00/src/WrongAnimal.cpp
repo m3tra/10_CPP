@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,29 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() : type("no_type") {
+WrongAnimal::WrongAnimal() : type("no_type") {
 	std::cout << PURPLE << "Default constructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
-Animal::Animal(const Animal& other) : type(other.type) {
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type) {
 	std::cout << PURPLE << "Copy constructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
-Animal& Animal::operator = (const Animal& other) {
+WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other) {
 	this->type = other.type;
 
 	std::cout << PURPLE << "Copy assignment of ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
@@ -40,9 +40,9 @@ Animal& Animal::operator = (const Animal& other) {
 	return *this;
 }
 
-Animal::~Animal() {
+WrongAnimal::~WrongAnimal() {
 	std::cout << PURPLE << "Destructor called for ";
-	std::cout << YELLOW << "[Animal] ";
+	std::cout << YELLOW << "[WrongAnimal] ";
 	std::cout << WHITE << "of type ";
 	std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
@@ -50,14 +50,15 @@ Animal::~Animal() {
 
 
 
-string	Animal::getType() const {
+string	WrongAnimal::getType() const {
 	return (this->type);
 }
 
 
 
-void	Animal::makeSound() const {
-	std::cout << YELLOW << "[Animal]: ";
-	std::cout << WHITE << "*random_sound*";
+void	WrongAnimal::makeSound() const {
+	std::cout << YELLOW << "[WrongAnimal]: ";
+	// std::cout << WHITE << "▓▚░▟▞▐▞▟▚░";
+	std::cout << WHITE << "?:&>`'*/%?";
 	std::cout << std::endl;
 }
