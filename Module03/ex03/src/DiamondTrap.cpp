@@ -6,14 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/30 06:34:20 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/31 04:52:00 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap("no_name"), FragTrap("no_name")
-{
+DiamondTrap::DiamondTrap() : ScavTrap("no_name"), FragTrap("no_name") {
 	std::cout << PURPLE << "Default constructor called for ";
 	std::cout << YELLOW << "[DiamondTrap] ";
 	std::cout << BLUE << _name << WHITE;
@@ -34,8 +33,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(o
 	std::cout << std::endl;
 }
 
-DiamondTrap& DiamondTrap::operator = (const DiamondTrap& other)
-{
+DiamondTrap& DiamondTrap::operator = (const DiamondTrap& other){
 	this->_name = other._name;
 	this->_hitPts = other._hitPts;
 	this->_energyPts = other._energyPts;

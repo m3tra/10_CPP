@@ -6,14 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/30 06:15:03 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/31 04:53:52 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("no_name"), _hitPts(10), _energyPts(10), _attackDmg(0)
-{
+ClapTrap::ClapTrap() : _name("no_name"), _hitPts(10), _energyPts(10), _attackDmg(0) {
 	std::cout << PURPLE << "Default constructor called for ";
 	std::cout << YELLOW << "[ClapTrap] ";
 	std::cout << BLUE << _name << WHITE;
@@ -34,8 +33,7 @@ ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hitPts(other._h
 	std::cout << std::endl;
 }
 
-ClapTrap& ClapTrap::operator = (const ClapTrap& other)
-{
+ClapTrap& ClapTrap::operator = (const ClapTrap& other) {
 	this->_name = other._name;
 	this->_hitPts = other._hitPts;
 	this->_energyPts = other._energyPts;

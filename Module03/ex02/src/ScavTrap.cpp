@@ -6,14 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:07:14 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/30 06:14:54 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/31 04:53:03 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
-{
+ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << PURPLE << "Default constructor called for ";
 	std::cout << YELLOW << "[ScavTrap] ";
 	std::cout << BLUE << _name << WHITE;
@@ -37,8 +36,7 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
 	std::cout << std::endl;
 }
 
-ScavTrap& ScavTrap::operator = (const ScavTrap& other)
-{
+ScavTrap& ScavTrap::operator = (const ScavTrap& other) {
 	this->_name = other._name;
 	this->_hitPts = other._hitPts;
 	this->_energyPts = other._energyPts;

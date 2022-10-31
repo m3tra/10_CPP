@@ -6,14 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:07:14 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/30 06:23:05 by fporto           ###   ########.fr       */
+/*   Updated: 2022/10/31 04:52:37 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
-{
+FragTrap::FragTrap() : ClapTrap() {
 	std::cout << PURPLE << "Default constructor called for ";
 	std::cout << YELLOW << "[FragTrap] ";
 	std::cout << BLUE << _name << WHITE;
@@ -37,8 +36,7 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
 	std::cout << std::endl;
 }
 
-FragTrap& FragTrap::operator = (const FragTrap& other)
-{
+FragTrap& FragTrap::operator = (const FragTrap& other) {
 	this->_name = other._name;
 	this->_hitPts = other._hitPts;
 	this->_energyPts = other._energyPts;
