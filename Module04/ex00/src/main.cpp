@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:58:09 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 07:46:32 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/01 04:24:32 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	wrong_tests() {
 
 	std::cout << i->getType() << " " << std::endl;
 
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	meta->makeSound();
 
 	std::cout << std::endl;
