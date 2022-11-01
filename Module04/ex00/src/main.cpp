@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:58:09 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/01 04:24:32 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/01 06:28:33 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 static void	given_tests() {
 	const	Animal* meta = new Animal();
+	std::cout << std::endl;
 	const	Animal* j = new Dog();
+	std::cout << std::endl;
 	const	Animal* i = new Cat();
 
 	std::cout << std::endl;
@@ -33,12 +35,15 @@ static void	given_tests() {
 	std::cout << std::endl;
 
 	delete meta;
+	std::cout << std::endl;
 	delete j;
+	std::cout << std::endl;
 	delete i;
 }
 
 static void	wrong_tests() {
 	const	WrongAnimal* meta = new WrongAnimal();
+	std::cout << std::endl;
 	const	WrongAnimal* i = new WrongCat();
 
 	std::cout << std::endl;
@@ -51,6 +56,7 @@ static void	wrong_tests() {
 	std::cout << std::endl;
 
 	delete meta;
+	std::cout << std::endl;
 	delete i;
 }
 

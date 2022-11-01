@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 06:04:14 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/01 06:33:02 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 WrongAnimal::WrongAnimal() : type("no_type") {
 	std::cout << PURPLE << "Default constructor called for ";
-	std::cout << YELLOW << "[WrongAnimal] ";
-	std::cout << WHITE << "of type ";
-	std::cout << BLUE << type << WHITE;
+	std::cout << YELLOW << "[WrongAnimal]" << WHITE;
+	// std::cout << WHITE << "of type ";
+	// std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type) {
 	std::cout << PURPLE << "Copy constructor called for ";
-	std::cout << YELLOW << "[WrongAnimal] ";
-	std::cout << WHITE << "of type ";
-	std::cout << BLUE << type << WHITE;
+	std::cout << YELLOW << "[WrongAnimal]" << WHITE;
+	// std::cout << WHITE << "of type ";
+	// std::cout << BLUE << type << WHITE;
 	std::cout << std::endl;
 }
 
@@ -32,9 +32,9 @@ WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other) {
 	this->type = other.type;
 
 	std::cout << PURPLE << "Copy assignment of ";
-	std::cout << YELLOW << "[WrongAnimal] ";
-	std::cout << WHITE << "of type ";
-	std::cout << BLUE << this->type << WHITE;
+	std::cout << YELLOW << "[WrongAnimal]" << WHITE;
+	// std::cout << WHITE << "of type ";
+	// std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
 
 	return *this;
@@ -42,9 +42,9 @@ WrongAnimal& WrongAnimal::operator = (const WrongAnimal& other) {
 
 WrongAnimal::~WrongAnimal() {
 	std::cout << PURPLE << "Destructor called for ";
-	std::cout << YELLOW << "[WrongAnimal] ";
-	std::cout << WHITE << "of type ";
-	std::cout << BLUE << this->type << WHITE;
+	std::cout << YELLOW << "[WrongAnimal]" << WHITE;
+	// std::cout << WHITE << "of type ";
+	// std::cout << BLUE << this->type << WHITE;
 	std::cout << std::endl;
 }
 
