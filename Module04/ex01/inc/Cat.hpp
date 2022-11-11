@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:31 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/01 04:39:10 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/11 05:57:40 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ public:
 	~Cat();
 
 	void	makeSound() const;
+	void	eureka(const string& idea);
+	void	amnesia(const string& idea);
+	void	listIdeas();
 
 };
 

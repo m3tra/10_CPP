@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/01 06:32:39 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/11 06:04:32 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Cat::Cat() : Animal() {
 
 Cat::Cat(const Cat& other) : Animal() {
 	this->type = other.type;
+	this->_brain = new Brain(*other._brain);
 
 	std::cout << PURPLE << "Copy constructor called for ";
 	std::cout << YELLOW << "[Cat]" << WHITE;
@@ -35,6 +36,8 @@ Cat::Cat(const Cat& other) : Animal() {
 
 Cat& Cat::operator = (const Cat& other) {
 	this->type = other.type;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
 
 	std::cout << PURPLE << "Copy assignment of ";
 	std::cout << YELLOW << "[Cat]" << WHITE;
@@ -61,4 +64,16 @@ void	Cat::makeSound() const {
 	std::cout << YELLOW << "[Cat]: ";
 	std::cout << WHITE << "*rrrrrrrr*";
 	std::cout << std::endl;
+}
+
+void	Cat::eureka(const string& idea) {
+	this->_brain->eureka(idea);
+}
+
+void	Cat::amnesia(const string& idea) {
+	this->_brain->amnesia(idea);
+}
+
+void	Cat::listIdeas() {
+	this->_brain->listIdeas();
 }

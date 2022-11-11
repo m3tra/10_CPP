@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:58:09 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/01 06:28:01 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/11 06:09:39 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,6 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-// static void	other_tests() {
-// 	const	WrongAnimal* meta = new WrongAnimal();
-// 	const	WrongAnimal* i = new WrongCat();
-
-// 	std::cout << std::endl;
-
-// 	std::cout << i->getType() << " " << std::endl;
-
-// 	i->makeSound(); //will output the cat sound!
-// 	meta->makeSound();
-
-// 	std::cout << std::endl;
-
-// 	delete meta;
-// 	delete i;
-// }
 
 int	main() {
 	const Animal*	j = new Dog();
@@ -45,31 +28,35 @@ int	main() {
 
 	std::cout << std::endl;
 
-	Animal*	arr[6];
+	const size_t	arrSize = 6;
+	Animal*			arr[arrSize];
+	size_t 			it;
 
-	for (size_t it = 0; it < 3; it++) {
+	for (it = 0; it < arrSize / 2; it++) {
 		arr[it] = new Dog();
+		static_cast<Dog*>(arr[it])->eureka("Gett boane");
 	}
 	std::cout << std::endl;
-	for (size_t it = 3; it < 6; it++) {
+	for (; it < arrSize; it++) {
 		arr[it] = new Cat();
+		static_cast<Cat*>(arr[it])->eureka("Who let the dogs out?");
 	}
-
 	std::cout << std::endl;
 
-	for (size_t it = 0; it < 6; it++) {
+	std::cout << YELLOW << "Last cat" << WHITE << "'s ideas:" << std::endl;
+	static_cast<Cat*>(arr[arrSize - 1])->eureka("Want lasagna");
+	static_cast<Cat*>(arr[arrSize - 1])->eureka("Need coffee");
+	static_cast<Cat*>(arr[arrSize - 1])->eureka("Love sleep");
+	static_cast<Cat*>(arr[arrSize - 1])->listIdeas();
+	std::cout << std::endl;
+
+	Cat	garfield = *static_cast<Cat*>(arr[arrSize - 1]);
+	std::cout << YELLOW << "CopyCat" << WHITE << "'s ideas: " << std::endl;
+	garfield.listIdeas();
+	std::cout << std::endl;
+
+	for (it = 0; it < arrSize; it++)
 		delete arr[it];
-	}
-
-	// for (size_t it = 0; it < 3; it++) {
-	// 	delete static_cast<Dog*>(arr[it]);
-	// }
-	// std::cout << std::endl;
-	// for (size_t it = 3; it < 6; it++) {
-	// 	delete static_cast<Cat*>(arr[it]);
-	// }
-
-	// other_tests();
 
 	return (0);
 }

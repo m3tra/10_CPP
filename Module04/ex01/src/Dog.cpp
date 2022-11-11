@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/01 06:34:16 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/11 06:04:40 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Dog::Dog() : Animal() {
 
 Dog::Dog(const Dog& other) : Animal() {
 	this->type = other.type;
+	this->_brain = new Brain(*other._brain);
 
 	std::cout << PURPLE << "Copy constructor called for ";
 	std::cout << YELLOW << "[Dog]" << WHITE;
@@ -35,6 +36,8 @@ Dog::Dog(const Dog& other) : Animal() {
 
 Dog& Dog::operator = (const Dog& other) {
 	this->type = other.type;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
 
 	std::cout << PURPLE << "Copy assignment of ";
 	std::cout << YELLOW << "[Dog]" << WHITE;
@@ -61,4 +64,16 @@ void	Dog::makeSound() const {
 	std::cout << YELLOW << "[Dog]: ";
 	std::cout << WHITE << "RURURURURURU";
 	std::cout << std::endl;
+}
+
+void	Dog::eureka(const string& idea) {
+	this->_brain->eureka(idea);
+}
+
+void	Dog::amnesia(const string& idea) {
+	this->_brain->amnesia(idea);
+}
+
+void	Dog::listIdeas() {
+	this->_brain->listIdeas();
 }
