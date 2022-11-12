@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:58:09 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/11 06:09:39 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/12 06:12:43 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main() {
 
 	const size_t	arrSize = 6;
 	Animal*			arr[arrSize];
-	size_t 			it;
+	size_t			it;
 
 	for (it = 0; it < arrSize / 2; it++) {
 		arr[it] = new Dog();
