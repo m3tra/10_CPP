@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:58:09 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/12 06:12:43 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/12 06:49:43 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,11 @@ int	main() {
 	static_cast<Cat*>(arr[arrSize - 1])->listIdeas();
 	std::cout << std::endl;
 
-	Cat	garfield = *static_cast<Cat*>(arr[arrSize - 1]);
-	std::cout << YELLOW << "CopyCat" << WHITE << "'s ideas: " << std::endl;
+	Cat	garfield;
+	std::cout << YELLOW << "CopyCat" << WHITE << "'s ideas before copy: " << std::endl;
+	std::cout << std::endl;
+	garfield = *static_cast<Cat*>(arr[arrSize - 1]);
+	std::cout << YELLOW << "CopyCat" << WHITE << "'s ideas after copy: " << std::endl;
 	garfield.listIdeas();
 	std::cout << std::endl;
 
