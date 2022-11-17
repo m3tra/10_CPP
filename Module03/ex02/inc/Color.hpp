@@ -16,6 +16,7 @@
 #define WHITE "\033[0m"
 #define YELLOW "\033[33m"
 #define RED "\033[38;5;1m"
+#define ORANGE "\033[38;5;208m"
 #define GREEN "\033[38;5;47m"
 #define BLUE "\033[38;5;14m"
 #define PURPLE "\033[38;5;13m"
