@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:15 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 05:05:10 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/18 07:46:21 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ Form::Form(const string& name, int gradeToSign, int gradeToExec) throw(std::exce
 	else if (gradeToExec > 150)
 		throw (GradeTooLowException("Grade required to execute is too low"));
 
-	std::cout << PURPLE << "Default constructor called for ";
-	std::cout << YELLOW << "[Form] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Default constructor called for ";
+	std::cout << YELLOW "[Form] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << ", grade required to sign " GREEN << this->getGradeToSign() << WHITE;
 	std::cout << " and grade required to execute " GREEN << this->getGradeToExec() << WHITE;
 	std::cout << std::endl;
@@ -32,8 +32,8 @@ Form::Form(const string& name, int gradeToSign, int gradeToExec) throw(std::exce
 
 Form::Form(const Form& other) \
 		: _name(other._name), _isSigned(false), _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec) {
-	std::cout << PURPLE << "Copy constructor called for ";
-	std::cout << YELLOW << "[Form] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Copy constructor called for ";
+	std::cout << YELLOW "[Form] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << ", grade required to sign " GREEN << this->getGradeToSign() << WHITE;
 	std::cout << " and grade required to execute " GREEN << this->getGradeToExec() << WHITE;
 	std::cout << std::endl;
@@ -42,8 +42,8 @@ Form::Form(const Form& other) \
 Form& Form::operator = (const Form& other) {
 	this->_isSigned = other._isSigned;
 
-	std::cout << PURPLE << "Copy assignment of ";
-	std::cout << YELLOW << "[Form] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Copy assignment of ";
+	std::cout << YELLOW "[Form] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << ", grade required to sign " GREEN << this->getGradeToSign() << WHITE;
 	std::cout << " and grade required to execute " GREEN << this->getGradeToExec() << WHITE;
 	std::cout << std::endl;
@@ -52,8 +52,8 @@ Form& Form::operator = (const Form& other) {
 }
 
 Form::~Form() {
-	std::cout << PURPLE << "Destructor called for ";
-	std::cout << YELLOW << "[Form] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Destructor called for ";
+	std::cout << YELLOW "[Form] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << ", grade required to sign " GREEN << this->getGradeToSign() << WHITE;
 	std::cout << " and grade required to execute " GREEN << this->getGradeToExec() << WHITE;
 	std::cout << std::endl;
@@ -95,7 +95,7 @@ bool			Form::isSigned() const {
 
 void			Form::beSigned(Bureaucrat& bureaucrat) throw (GradeTooLowException) {
 	if (bureaucrat.getGrade() > this->_gradeToSign)
-		throw (GradeTooLowException("Grade too low to sign"));
+		throw (GradeTooLowException("grade too low to sign"));
 	this->_isSigned = true;
 }
 
@@ -103,9 +103,10 @@ void			Form::beSigned(Bureaucrat& bureaucrat) throw (GradeTooLowException) {
 
 std::ostream&	operator << (std::ostream& out, const Form& form) {
 	out << BLUE << form.getName() << WHITE;
-	out << ", form with grade required to sign ";
-	out << GREEN << form.getGradeToSign() << WHITE;
-	out << " and grade required to execute: ";
+	out << ", form with grade required to" << std::endl;
+	out << "        sign ";
+	out << GREEN << form.getGradeToSign() << WHITE << std::endl;
+	out << "        execute ";
 	out << GREEN << form.getGradeToExec() << WHITE;
 	return out;
 }

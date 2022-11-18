@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:15 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 05:11:34 by fporto           ###   ########.fr       */
+/*   Updated: 2022/11/18 07:43:23 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ Bureaucrat::Bureaucrat(const string& name, int grade) throw(std::exception) : _n
 
 	_grade = grade;
 
-	std::cout << PURPLE << "Default constructor called for ";
-	std::cout << YELLOW << "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Default constructor called for ";
+	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {
-	std::cout << PURPLE << "Copy constructor called for ";
-	std::cout << YELLOW << "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Copy constructor called for ";
+	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
@@ -36,8 +36,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(oth
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other) {
 	this->_grade = other._grade;
 
-	std::cout << PURPLE << "Copy assignment of ";
-	std::cout << YELLOW << "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Copy assignment of ";
+	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 
@@ -45,8 +45,8 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << PURPLE << "Destructor called for ";
-	std::cout << YELLOW << "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << PURPLE "Destructor called for ";
+	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
