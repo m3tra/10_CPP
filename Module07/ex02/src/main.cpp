@@ -24,7 +24,7 @@ void	printArray(T& arr) {
 int		main() {
 	std::cout << "MAX_VAL = 7" << std::endl;
 	{
-		std::cout << PURPLE "Construction without parameter " BLUE "Array<size_t> empty" WHITE << std::endl;
+		std::cout << PURPLE "Construction without parameter " BLUE "Array<int> empty" WHITE << std::endl;
 		Array<int> empty;
 		std::cout << empty;
 		std::cout << GREEN "OK" WHITE << std::endl;
