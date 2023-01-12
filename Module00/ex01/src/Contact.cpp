@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 04:26:06 by fporto            #+#    #+#             */
-/*   Updated: 2022/07/30 22:58:20 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/12 19:07:08 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ bool	Contact::isEmpty() {
 }
 
 void	Contact::setFirstName(string FirstName) {
+	this->_Empty = false;
 	this->_FirstName = FirstName;
 }
 
@@ -58,6 +59,13 @@ bool	Contact::setPhoneNumber(string PhoneNumber) {
 void	Contact::setSecret(string Secret) {
 	this->_Secret = Secret;
 }
+
+void	Contact::setCreationTime(std::time_t CreationTime) {
+	this->_CreationTime = CreationTime;
+}
+
+
+
 
 string	Contact::getFirstName() {
 	return (this->_FirstName);

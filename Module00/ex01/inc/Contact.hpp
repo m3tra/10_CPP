@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 04:19:13 by fporto            #+#    #+#             */
-/*   Updated: 2022/07/30 22:39:48 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/12 19:07:45 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ using std::string;
 class Contact {
 
 private:
-	bool	_Empty;
-	string	_FirstName;
-	string	_LastName;
-	string	_Nickname;
-	string	_PhoneNumber;
-	string	_Secret;
+	bool		_Empty;
+	string		_FirstName;
+	string		_LastName;
+	string		_Nickname;
+	string		_PhoneNumber;
+	string		_Secret;
 	std::time_t	_CreationTime;
 
 public:
@@ -39,6 +39,7 @@ public:
 	void	setNickname(string Nickname);
 	bool	setPhoneNumber(string PhoneNumber);
 	void	setSecret(string Secret);
+	void	setCreationTime(std::time_t	CreationTime);
 
 	string	getFirstName();
 	string	getLastName();

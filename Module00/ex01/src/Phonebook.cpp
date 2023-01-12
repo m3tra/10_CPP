@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 04:26:06 by fporto            #+#    #+#             */
-/*   Updated: 2022/07/30 22:13:22 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/12 19:12:04 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		PhoneBook::getEmptyIndex() {
 }
 
 int		PhoneBook::getOldestIndex() {
-	int	OldestIndex;
+	int	OldestIndex = 0;
 	int	OldestTime = this->ContactsList[0].getCreationTime();
 	int	TmpTime;
 
@@ -55,8 +55,9 @@ int		PhoneBook::getOldestIndex() {
 void	PhoneBook::insertContact(Contact NewContact) {
 	if (this->hasEmptyContact())
 		this->ContactsList[this->getEmptyIndex()] = NewContact;
-	else
+	else {
 		this->ContactsList[this->getOldestIndex()] = NewContact;
+	}
 }
 
 static string	Truncate(string BigString) {
