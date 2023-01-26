@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Color.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 03:30:51 by fporto            #+#    #+#             */
-/*   Updated: 2023/01/26 11:56:15 by fporto           ###   ########.fr       */
+/*   Created: 2022/10/26 17:23:24 by fporto            #+#    #+#             */
+/*   Updated: 2022/10/26 17:38:41 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef COLOR_HPP
+#define COLOR_HPP
 
-#include <string>
-#include <iostream>
-
-#include "Color.hpp"
-
-using std::string;
-
-class Zombie {
-
-private:
-
-	string	_name;
-
-public:
-
-	void	announce(void);
-
-	void	setName(string name);
-
-	Zombie();
-	Zombie(string name);
-	~Zombie();
-};
-
-Zombie*	zombieHorde(int N, string name);
+#define WHITE "\033[0m"
+#define YELLOW "\033[33m"
+#define RED "\033[38;5;1m"
+#define ORANGE "\033[38;5;208m"
+#define GREEN "\033[38;5;47m"
+#define BLUE "\033[38;5;14m"
+#define PURPLE "\033[38;5;13m"
 
 #endif

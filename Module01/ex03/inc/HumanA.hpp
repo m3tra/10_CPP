@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 18:34:43 by fporto            #+#    #+#             */
-/*   Updated: 2022/08/03 00:45:32 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/26 12:09:16 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include "Weapon.hpp"
+#include "Color.hpp"
 
 using std::string;
 

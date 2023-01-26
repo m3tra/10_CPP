@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 00:26:13 by fporto            #+#    #+#             */
-/*   Updated: 2022/08/03 03:54:25 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/26 12:40:52 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	Harl::_info(void) {
 }
 
 void	Harl::_warning(void) {
-	std::cout << "There better not be bones in it breh." << std::endl;
+	std::cout << "My pizza better not have bones in it breh." << std::endl;
 }
 
 void	Harl::_error(void) {
-	std::cout << "This sh!t got bone in it. Where's your *MANAGER*?" << std::endl;;
+	std::cout << "This **** got bone in it. Where's your *MANAGER*?" << std::endl;;
 }
 
 void	Harl::complain(string level) {

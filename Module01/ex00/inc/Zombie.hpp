@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 03:30:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/08/02 03:46:56 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/26 11:39:00 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include <iostream>
+
+#include "Color.hpp"
 
 using std::string;
 
