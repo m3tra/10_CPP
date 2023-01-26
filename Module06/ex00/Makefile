@@ -271,6 +271,7 @@ clean_dep: $$(call get_lib_target,$${DEFAULT_LIBS},$$@)
 	${AT}find ${DEP_ROOT} -type f -name "*.d" -delete ${BLOCK}
 
 clean_all: fclean clean_dep
+	${AT}rm -r obj/ dep/ bin/
 
 re: clean_all all
 
