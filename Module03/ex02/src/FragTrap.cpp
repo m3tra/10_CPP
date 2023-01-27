@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:07:14 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:53:16 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/27 16:53:40 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	FragTrap::attack(const string& target) {
 	if (this->_energyPts) {
 		this->_energyPts--;
 
-		std::cout << YELLOW << "[FragTrap] ";
+		std::cout << YELLOW << "FragTrap ";
 		std::cout << BLUE << this->_name << WHITE;
 		std::cout << " attacks ";
 		std::cout << RED << target << WHITE;
@@ -78,7 +78,7 @@ void	FragTrap::attack(const string& target) {
 }
 
 void	FragTrap::highFivesGuys(void) {
-	std::cout << YELLOW << "[FragTrap] " WHITE << "*";
+	std::cout << YELLOW << "FragTrap " WHITE << "*";
 	std::cout << BLUE << this->_name << WHITE;
 	std::cout << " requests a high five*" << WHITE;
 	std::cout << std::endl;
