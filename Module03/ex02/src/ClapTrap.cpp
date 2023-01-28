@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:53:23 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/27 16:53:49 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	ClapTrap::attack(const string& target) {
 	if (this->_energyPts) {
 		this->_energyPts--;
 
-		std::cout << YELLOW << "[ClapTrap] ";
+		std::cout << YELLOW << "ClapTrap ";
 		std::cout << WHITE << this->_name;
 		std::cout << " attacks ";
 		std::cout << RED << target << WHITE;

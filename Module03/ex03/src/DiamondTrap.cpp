@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:52:00 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/27 16:56:46 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ DiamondTrap::~DiamondTrap() {
 
 
 void	DiamondTrap::whoAmI() {
-	std::cout << YELLOW << "[DiamondTrap]" << WHITE << " name: ";
+	std::cout << YELLOW << "DiamondTrap" << WHITE << " name: ";
 	std::cout << BLUE << this->_name;
 	std::cout << std::endl;
-	std::cout << YELLOW << "[ClapTrap]"  << WHITE << " name: ";
+	std::cout << YELLOW << "ClapTrap"  << WHITE << " name: ";
 	std::cout << BLUE << ClapTrap::_name << WHITE;
 	std::cout << std::endl;
 }

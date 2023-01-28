@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:07:14 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:52:48 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/27 16:56:13 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ ScavTrap::~ScavTrap() {
 
 
 void	ScavTrap::guardGate() {
-	std::cout << YELLOW << "[ScavTrap]";
+	std::cout << YELLOW << "ScavTrap";
 	std::cout << WHITE << " is now in Gate Keeper mode.";
 	std::cout << std::endl;
 }
@@ -69,7 +69,7 @@ void	ScavTrap::attack(const string& target) {
 	if (this->_energyPts) {
 		this->_energyPts--;
 
-		std::cout << YELLOW << "[ScavTrap] ";
+		std::cout << YELLOW << "ScavTrap ";
 		std::cout << BLUE << this->_name << WHITE;
 		std::cout << " attacks ";
 		std::cout << RED << target << WHITE;

@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:53:52 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/27 16:47:39 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,17 +108,15 @@ void	ClapTrap::attack(const string& target) {
 	if (this->_energyPts) {
 		this->_energyPts--;
 
-		std::cout << YELLOW << "[ClapTrap] ";
-		std::cout << WHITE << this->_name;
+		std::cout << YELLOW << "ClapTrap ";
+		std::cout << BLUE << this->_name << WHITE;
 		std::cout << " attacks ";
 		std::cout << RED << target << WHITE;
 		std::cout << ", causing ";
 		std::cout << RED << this->_attackDmg << WHITE;
-		std::cout << " points of damage!";
-		std::cout << std::endl;
+		std::cout << " points of damage!" << std::endl;
 		std::cout << "    Remaining Energy: ";
-		std::cout << BLUE << this->_energyPts << WHITE;
-		std::cout << std::endl;
+		std::cout << BLUE << this->_energyPts << WHITE << std::endl;
 	}
 }
 
@@ -130,11 +128,9 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << BLUE << this->_name << WHITE;
 	std::cout << " takes ";
 	std::cout << RED << amount << WHITE;
-	std::cout << " points of damage!";
-	std::cout << std::endl;
+	std::cout << " points of damage!" << std::endl;
 	std::cout << "    Remaining Health: ";
-	std::cout << BLUE << this->_hitPts << WHITE;
-	std::cout << std::endl;
+	std::cout << BLUE << this->_hitPts << WHITE << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
@@ -145,13 +141,10 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << BLUE << this->_name << WHITE;
 		std::cout << " recovers ";
 		std::cout << GREEN << amount << WHITE;
-		std::cout << " hit points!";
-		std::cout << std::endl;
+		std::cout << " hit points!" << std::endl;
 		std::cout << "    Remaining Health: ";
-		std::cout << BLUE << this->_hitPts << WHITE;
-		std::cout << std::endl;
+		std::cout << BLUE << this->_hitPts << WHITE << std::endl;
 		std::cout << "    Remaining Energy: ";
-		std::cout << BLUE << this->_energyPts << WHITE;
-		std::cout << std::endl;
+		std::cout << BLUE << this->_energyPts << WHITE << std::endl;
 	}
 }
