@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:15 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 11:15:08 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:48:14 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ bool			Form::isSigned() const {
 
 
 
-void			Form::beSigned(Bureaucrat& bureaucrat) throw (GradeTooLowException) {
+void			Form::sign(Bureaucrat& bureaucrat) throw (GradeTooLowException) {
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 		throw (GradeTooLowException("Grade too low to sign"));
 	this->_isSigned = true;

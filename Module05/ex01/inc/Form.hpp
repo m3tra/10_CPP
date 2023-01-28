@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:26 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 04:07:52 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:48:14 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ public:
 	int				getGradeToExec() const;
 	bool			isSigned() const;
 
-	void			beSigned(Bureaucrat& bureaucrat) throw (GradeTooLowException);
+	void			sign(Bureaucrat& bureaucrat) throw (GradeTooLowException);
 
 };
 

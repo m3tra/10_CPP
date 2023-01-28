@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:15 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 11:30:23 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:48:14 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void			Bureaucrat::signForm(Form& form) {
 		return;
 	}
 	try {
-		form.beSigned(*this);
+		form.sign(*this);
 		std::cout << BLUE << *this << std::endl;
 		std::cout << GREEN "signed" << std::endl;
 		std::cout << "    " << form << std::endl << std::endl;

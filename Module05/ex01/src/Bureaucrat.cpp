@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:15 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/18 07:43:23 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:50:37 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 Bureaucrat::Bureaucrat(const string& name, int grade) throw(std::exception) : _name(name) {
 	if (grade < 1)
-		throw (GradeTooHighException("Grade is too high"));
+		throw (GradeTooHighException(RED "Grade is too high" WHITE));
 	else if (grade > 150)
-		throw (GradeTooLowException("Grade is too low"));
+		throw (GradeTooLowException(RED "Grade is too low" WHITE));
 
 	_grade = grade;
 
 	std::cout << PURPLE "Default constructor called for ";
-	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << YELLOW "[Bureaucrat] " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) {
 	std::cout << PURPLE "Copy constructor called for ";
-	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << YELLOW "[Bureaucrat] " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
@@ -37,7 +37,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other) {
 	this->_grade = other._grade;
 
 	std::cout << PURPLE "Copy assignment of ";
-	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << YELLOW "[Bureaucrat] " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 
@@ -46,7 +46,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other) {
 
 Bureaucrat::~Bureaucrat() {
 	std::cout << PURPLE "Destructor called for ";
-	std::cout << YELLOW "[Bureaucrat] " WHITE "of name " BLUE << _name << WHITE;
+	std::cout << YELLOW "[Bureaucrat] " BLUE << _name << WHITE;
 	std::cout << " and grade " GREEN << _grade << WHITE;
 	std::cout << std::endl;
 }
@@ -79,13 +79,13 @@ int				Bureaucrat::getGrade() const{
 
 void			Bureaucrat::promote() throw (GradeTooHighException) {
 	if (this->getGrade() == 1)
-		throw GradeTooHighException("Already has highest grade");
+		throw GradeTooHighException(RED "Already has highest grade" WHITE);
 	this->_grade--;
 }
 
 void			Bureaucrat::demote() throw (GradeTooLowException) {
 	if (this->getGrade() == 150)
-		throw GradeTooLowException("Already has lowest grade");
+		throw GradeTooLowException(RED "Already has lowest grade" WHITE);
 	this->_grade++;
 }
 
@@ -94,12 +94,12 @@ void			Bureaucrat::signForm(Form& form) {
 		std::cout << BLUE << *this << std::endl;
 		std::cout << RED "couldn't sign" << std::endl;
 		std::cout << "    " << form << std::endl;
-		std::cout << "    because" << std::endl;
-		std::cout << "        it was already signed" << std::endl << std::endl;
+		std::cout << "    Reason:" << std::endl;
+		std::cout << RED "        it was already signed" WHITE << std::endl << std::endl;
 		return;
 	}
 	try {
-		form.beSigned(*this);
+		form.sign(*this);
 		std::cout << BLUE << *this << std::endl;
 		std::cout << GREEN "signed" << std::endl;
 		std::cout << "    " << form << std::endl << std::endl;
@@ -108,8 +108,8 @@ void			Bureaucrat::signForm(Form& form) {
 		std::cout << BLUE << *this << std::endl;
 		std::cout << RED "couldn't sign" << std::endl;
 		std::cout << "    " << form << std::endl;
-		std::cout << "    because" << std::endl;
-		std::cout << "        " << e.what() << std::endl << std::endl;
+		std::cout << "    Reason:" << std::endl;
+		std::cout << "        " RED << e.what() << WHITE << std::endl << std::endl;
 	}
 }
 
@@ -117,7 +117,8 @@ void			Bureaucrat::signForm(Form& form) {
 
 std::ostream&	operator << (std::ostream& out, const Bureaucrat& bureaucrat) {
 	out << BLUE << bureaucrat.getName() << WHITE;
-	out << ", bureaucrat grade ";
+	out << ", ";
+	out << YELLOW "bureaucrat" WHITE " of grade ";
 	out << GREEN << bureaucrat.getGrade() << WHITE;
 	return out;
 }

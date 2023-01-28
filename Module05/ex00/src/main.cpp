@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 07:39:06 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/17 23:40:10 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 16:34:39 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	main() {
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
-	std::cout << ORANGE "John" WHITE << std::endl;
+	std::cout << std::endl << ORANGE "John" WHITE << std::endl;
 
 	try {
 		Bureaucrat	john = Bureaucrat("John", 1);
@@ -45,8 +44,7 @@ int	main() {
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
-	std::cout << ORANGE "Gui" WHITE << std::endl;
+	std::cout << std::endl << ORANGE "Gui" WHITE << std::endl;
 
 	try {
 		Bureaucrat	gui = Bureaucrat("Gui", 150);
@@ -63,8 +61,7 @@ int	main() {
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
-	std::cout << ORANGE "Joel" WHITE << std::endl;
+	std::cout << std::endl << ORANGE "Joel" WHITE << std::endl;
 
 	try {
 		Bureaucrat	joel = Bureaucrat("Joel", 151);
@@ -81,8 +78,7 @@ int	main() {
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
-	std::cout << ORANGE "Jason" WHITE << std::endl;
+	std::cout << std::endl << ORANGE "Jason" WHITE << std::endl;
 
 	try {
 		Bureaucrat	jason = Bureaucrat("Jason", 0);
