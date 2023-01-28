@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 06:53:17 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/17 04:02:29 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 13:37:09 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,10 @@ static void	givenCode() {
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
-
 	me->use(0, *bob);
 	me->use(1, *bob);
 

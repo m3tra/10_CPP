@@ -6,13 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/11 06:04:32 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 13:33:49 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() : AAnimal() {
 	this->type = "Cat";
 	this->_brain = new Brain();
 
@@ -23,7 +23,7 @@ Cat::Cat() : Animal() {
 	std::cout << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal() {
+Cat::Cat(const Cat& other) : AAnimal() {
 	this->type = other.type;
 	this->_brain = new Brain(*other._brain);
 

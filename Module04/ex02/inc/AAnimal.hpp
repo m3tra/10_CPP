@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:31 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/12 06:49:02 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 13:43:34 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
@@ -19,20 +19,20 @@
 
 using std::string;
 
-class Animal {
+class AAnimal {
 
 protected:
 
 	string	type;
 	// Protected default constructor makes class not instantiable by
 	// itself, serving only as a base class to another one
-	Animal();
+	AAnimal();
 
 public:
 
-	Animal(const Animal& other);
-	Animal& operator = (const Animal& other);
-	virtual ~Animal();
+	AAnimal(const AAnimal& other);
+	AAnimal& operator = (const AAnimal& other);
+	virtual ~AAnimal();
 
 	string			getType() const;
 

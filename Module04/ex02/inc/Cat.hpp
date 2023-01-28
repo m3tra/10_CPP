@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:31 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/11 05:57:40 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 13:41:14 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #define CAT_HPP
 
 #include <string>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 using std::string;
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 
 private:
 

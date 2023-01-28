@@ -6,13 +6,13 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 06:59:00 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/11 06:04:40 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/28 13:33:53 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
 	this->type = "Dog";
 	this->_brain = new Brain();
 
@@ -23,7 +23,7 @@ Dog::Dog() : Animal() {
 	std::cout << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal() {
+Dog::Dog(const Dog& other) : AAnimal() {
 	this->type = other.type;
 	this->_brain = new Brain(*other._brain);
 
