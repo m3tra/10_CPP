@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 13:30:47 by fporto            #+#    #+#             */
-/*   Updated: 2023/02/01 19:52:06 by fporto           ###   ########.fr       */
+/*   Created: 2023/02/01 20:37:39 by fporto            #+#    #+#             */
+/*   Updated: 2023/02/01 22:16:48 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <iostream>
+#include <exception>
+#include <ctime>
 
 #include <vector>
 #include <deque>
@@ -23,16 +25,20 @@
 
 #include "color.hpp"
 
-template<typename T>
-bool	easyfind(const T& container, const int target) {
-	std::cout << "Item " BLUE << target << " ";
+class	Span {
+private:
+	size_t	_maxSize;
+	std::vector<int> _vec;
 
-	if (std::find(container.begin(), container.end(), target) == container.end()) {
-		std::cout << RED "not found" WHITE << std::endl;
-		return false;
-	}
-	std::cout << GREEN "found" WHITE << std::endl;
-	return true;
-}
+public:
+	Span(size_t	N);
+	Span(const Span& other);
+	Span& operator = (const Span& other);
+	~Span();
+
+	void	addNumber(int n);
+	size_t	shortestSpan();
+	size_t	longestSpan();
+};
 
 #endif
