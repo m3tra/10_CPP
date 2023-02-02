@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 04:09:53 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/22 12:25:04 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/29 17:40:24 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	identify(Base& p) {
 int		main() {
 	size_t	amount = 10;
 
+	srand(time(NULL));
 	for (size_t i = 0; i < amount; i++) {
 		Base	*tmp = generate();
 		identify(tmp);

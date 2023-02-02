@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:00:48 by fporto            #+#    #+#             */
-/*   Updated: 2022/11/22 12:15:05 by fporto           ###   ########.fr       */
+/*   Updated: 2023/01/29 17:40:12 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 using std::string;
 
