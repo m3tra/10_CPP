@@ -37,7 +37,7 @@
 ################################################################################
 
 # Name of a single binary. Add as many variables as required by the project
-NAME1 := easyfind
+NAME1 := Span
 
 # The names of all the binaries. Add aditional variables created above separated
 # by space.

@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:37:39 by fporto            #+#    #+#             */
-/*   Updated: 2023/02/01 22:16:48 by fporto           ###   ########.fr       */
+/*   Updated: 2023/02/06 19:36:42 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,19 @@ public:
 	Span& operator = (const Span& other);
 	~Span();
 
-	void	addNumber(int n);
-	size_t	shortestSpan();
-	size_t	longestSpan();
+	class AddException : public std::exception {
+	public:
+		virtual const char * what() const throw();
+	};
+
+	class SpanException : public std::exception {
+	public:
+		virtual const char * what() const throw();
+	};
+
+	void	addNumber(int n) throw (AddException);
+	int		shortestSpan() throw (SpanException);
+	int		longestSpan() throw (SpanException);
 };
 
 #endif
