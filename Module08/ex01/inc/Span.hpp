@@ -6,24 +6,24 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:37:39 by fporto            #+#    #+#             */
-/*   Updated: 2023/02/06 19:36:42 by fporto           ###   ########.fr       */
+/*   Updated: 2023/02/07 04:02:26 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-#include <iostream>
-#include <exception>
-#include <ctime>
+# include <iostream>
+# include <exception>
+# include <ctime>
 
-#include <vector>
-#include <deque>
-#include <list>
+# include <vector>
+# include <deque>
+# include <list>
 
-#include <algorithm>
+# include <algorithm>
 
-#include "color.hpp"
+# include "color.hpp"
 
 class	Span {
 private:
@@ -49,6 +49,11 @@ public:
 	void	addNumber(int n) throw (AddException);
 	int		shortestSpan() throw (SpanException);
 	int		longestSpan() throw (SpanException);
+
+	void	addRange(std::vector<int>::iterator first, \
+					std::vector<int>::iterator last);
+
+	void	printArray();
 };
 
 #endif

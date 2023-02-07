@@ -6,22 +6,22 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:30:47 by fporto            #+#    #+#             */
-/*   Updated: 2023/02/01 19:52:06 by fporto           ###   ########.fr       */
+/*   Updated: 2023/02/07 04:02:35 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-#include <iostream>
+# include <iostream>
 
-#include <vector>
-#include <deque>
-#include <list>
+# include <vector>
+# include <deque>
+# include <list>
 
-#include <algorithm>
+# include <algorithm>
 
-#include "color.hpp"
+# include "color.hpp"
 
 template<typename T>
 bool	easyfind(const T& container, const int target) {

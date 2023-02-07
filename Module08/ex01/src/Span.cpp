@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:40:58 by fporto            #+#    #+#             */
-/*   Updated: 2023/02/06 19:56:20 by fporto           ###   ########.fr       */
+/*   Updated: 2023/02/07 01:50:42 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Span::addNumber(int n) throw (AddException) {
 	this->_vec.push_back(n);
 }
 
-int	Span::shortestSpan() throw (SpanException) {
+int		Span::shortestSpan() throw (SpanException) {
 	int							span = 0;
 	std::vector<int>::iterator	it;
 	std::vector<int>::iterator	it2;
@@ -53,17 +53,18 @@ int	Span::shortestSpan() throw (SpanException) {
 
 	for (it = _vec.begin(); it != _vec.end(); it++) {
 		for (it2 = it; ++it2 != _vec.end();) {
+			int	tmp = abs(*it - *it2);
 			if (it == _vec.begin())
-				span = abs(*it - *it2);
+				span = tmp;
 
-			if (span > abs(*it - *it2))
-				span = abs(*it - *it2);
+			if (span > tmp)
+				span = tmp;
 		}
 	}
 	return span;
 }
 
-int	Span::longestSpan() throw (SpanException) {
+int		Span::longestSpan() throw (SpanException) {
 	int							span = 0;
 	std::vector<int>::iterator	it;
 	std::vector<int>::iterator	it2;
@@ -73,16 +74,31 @@ int	Span::longestSpan() throw (SpanException) {
 
 	for (it = _vec.begin(); it != _vec.end(); it++) {
 		for (it2 = it; ++it2 != _vec.end();) {
-			if (it == _vec.begin())
-				span = abs(*it - *it2);
+			int	tmp = abs(*it - *it2);
 
-			if (span < abs(*it - *it2))
-				span = abs(*it - *it2);
+			if (it == _vec.begin())
+				span = tmp;
+
+			if (span < tmp)
+				span = tmp;
 		}
 	}
 	return span;
 }
 
-void	addRange(std::vector<int> &vec, std::vector<int>::iterator pos, std::vector<int>::iterator first, std::vector<int>::iterator last) {
-	vec.insert(pos, first, last);
+void	Span::addRange(std::vector<int>::iterator first,
+						std::vector<int>::iterator last) {
+	std::vector<int>::iterator end = this->_vec.end();
+	this->_vec.insert(end, first, last);
+}
+
+
+// Hardcoded insertion at end of Span
+void	Span::printArray() {
+	for (std::vector<int>::iterator it = this->_vec.begin();
+		it != this->_vec.end();
+		it++) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
 }
