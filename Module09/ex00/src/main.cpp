@@ -1,15 +1,39 @@
 #include "BitcoinExchange.hpp"
 
-int	main(int argc, char **argv)
+std::ifstream	openFile(char *filename)
 {
-	std::fstream	inFile;
+	std::ifstream	inFile;
 
-	inFile.open(argv[1], std::ios::in);
+	inFile.open(filename, std::ios::in);
 	if (!inFile.is_open()) {
 		std::cout << RED << "Error: ";
-		std::cout << WHITE << "Failed to open " << argv[1];
+		std::cout << WHITE << "Failed to open " << filename;
 		std::cout << std::endl;
+	}
+	return (inFile);
+}
+
+int	main(int argc, char **argv)
+{
+	std::ifstream	inFile;
+
+	if (argc != 2) {
+		std::cout << "Usage: ./btc <database>" << std::endl;
 		return (1);
+	}
+
+	inFile = openFile(argv[1]);
+	if (!inFile.is_open())
+		return (1);
+
+	string	line;
+	while (std::getline(inFile, line)) {
+		if (!isValidLine(line)) {
+			std::cout << RED << "Error: ";
+			std::cout << WHITE << "Bad format: ";
+			std::cout << line << std::endl;
+			return (1);
+		}
 	}
 
 	// lines must format must be "date | value"
@@ -36,4 +60,5 @@ int	main(int argc, char **argv)
 	lower date and not the upper one.
 	*/
 
+	return (0);
 }
