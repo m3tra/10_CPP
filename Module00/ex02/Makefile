@@ -81,7 +81,7 @@ LANG := C++
 ################################################################################
 
 # Compiler
-CC := clang++
+CC := c++
 
 # Compiler flags
 CFLAGS := -Wall -Wextra -Werror -std=c++98
@@ -91,7 +91,7 @@ ifeq (${PEDANTIC},true)
 	CFLAGS += -Wpedantic -Werror=pedantic -pedantic-errors
 	CFLAGS += -Wcast-qual -Wdisabled-optimization -Wformat=2 -Wuninitialized
 	CFLAGS += -Winit-self -Wmissing-include-dirs -Wredundant-decls -Wshadow
-	CFLAGS += -Wstrict-overflow=5 -Wundef -fdiagnostics-show-option
+	CFLAGS += -Wundef -fdiagnostics-show-option
 	CFLAGS += -fstack-protector-all
 	ifeq (${CC},gcc)
 		CFLAGS += -Wformat-signedness -Wformat-truncation=2 -Wformat-overflow=2

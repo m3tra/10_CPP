@@ -81,7 +81,7 @@ LANG := C++
 ################################################################################
 
 # Compiler
-CC := clang++
+CC := c++
 
 # Compiler flags
 # CFLAGS := -Wall -Wextra -Werror -std=c++98
