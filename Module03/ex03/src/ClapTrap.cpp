@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/31 04:52:19 by fporto           ###   ########.fr       */
+/*   Updated: 2023/06/08 21:32:08 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,15 @@ int	ClapTrap::getAttackDmg(void) const {
 }
 
 void	ClapTrap::setHitPts(unsigned int const pts) {
-	if (pts < 0)
-		this->_hitPts = pts;
-	else
-		this->_hitPts = pts;
+	this->_hitPts = pts;
 }
 
 void	ClapTrap::setEnergyPts(unsigned int const pts) {
-	if (pts < 0)
-		this->_energyPts = pts;
-	else
-		this->_energyPts = pts;
+	this->_energyPts = pts;
 }
 
 void	ClapTrap::setAttackDmg(unsigned int const pts) {
-	if (pts < 0)
-		this->_attackDmg = pts;
-	else
-		this->_attackDmg = pts;
+	this->_attackDmg = pts;
 }
 
 
@@ -124,8 +115,6 @@ void	ClapTrap::attack(const string& target) {
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	this->_hitPts -= amount;
-	if (this->_hitPts < 0)
-		this->_energyPts = 0;
 
 	std::cout << BLUE << this->_name << WHITE;
 	std::cout << " takes ";

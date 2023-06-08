@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:16:25 by fporto            #+#    #+#             */
-/*   Updated: 2022/10/30 06:32:19 by fporto           ###   ########.fr       */
+/*   Updated: 2023/06/08 21:26:35 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ class	ScavTrap : virtual public ClapTrap {
 private:
 
 	ScavTrap();
+
+protected:
+
+	static const int default_hitPts = 100;
+	static const int default_energyPts = 50;
+	static const int default_attackDmg = 20;
 
 public:
 

@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:53:29 by fporto            #+#    #+#             */
-/*   Updated: 2023/01/27 16:56:46 by fporto           ###   ########.fr       */
+/*   Updated: 2023/06/08 21:26:36 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ DiamondTrap::DiamondTrap() : ScavTrap("no_name"), FragTrap("no_name") {
 }
 
 DiamondTrap::DiamondTrap(const string& name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name) {
+	this->_hitPts = FragTrap::default_hitPts;
+	this->_energyPts = ScavTrap::default_energyPts;
+	this->_attackDmg = FragTrap::default_attackDmg;
+
 	std::cout << PURPLE << "Constructor called for ";
 	std::cout << YELLOW << "[DiamondTrap] ";
 	std::cout << BLUE << name << WHITE;
