@@ -84,7 +84,7 @@ LANG := C++
 CC := c++
 
 # Compiler flags
-# CFLAGS := -Wall -Wextra -Werror -std=c++98
+CFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Pedantic flags
 ifeq (${PEDANTIC},true)
