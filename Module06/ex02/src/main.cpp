@@ -6,7 +6,7 @@
 /*   By: fporto <fporto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 04:09:53 by fporto            #+#    #+#             */
-/*   Updated: 2023/01/29 17:40:24 by fporto           ###   ########.fr       */
+/*   Updated: 2023/06/27 18:14:05 by fporto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,35 @@ void	identify(Base* p) {
 	std::cout << "Class of type (*) ";
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(p))
+	else if (dynamic_cast<B*>(p))
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(p))
+	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 }
 
 void	identify(Base& p) {
 	std::cout << "Class of type (&) ";
-	if (dynamic_cast<A*>(&p))
+	try {
+		A& a = dynamic_cast<A&>(p);
+		(void) a;
 		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(&p))
+		return;
+	}
+	catch (std::exception& e) {}
+	try {
+		B& b = dynamic_cast<B&>(p);
+		(void) b;
 		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(&p))
+		return;
+	}
+	catch (std::exception& e) {}
+	try {
+		C& c = dynamic_cast<C&>(p);
+		(void) c;
 		std::cout << "C" << std::endl;
+		return;
+	}
+	catch (std::exception& e) {}
 }
 
 int		main() {
