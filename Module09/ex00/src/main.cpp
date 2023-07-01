@@ -1,68 +1,52 @@
 #include "BitcoinExchange.hpp"
 
-bool	is_csv(const char *filename)
+void	err_exit(const char *error)
+{
+	std::cout << RED << "Error: ";
+	std::cout << WHITE << error << std::endl;
+	exit(EXIT_FAILURE);
+}
+
+void	err_exit(const string &error)
+{
+	std::cout << RED << "Error: ";
+	std::cout << WHITE << error << std::endl;
+	exit(EXIT_FAILURE);
+}
+
+void	check_csv(const char *filename)
 {
 	const string	name = filename;
 
-	if (name.length() < 5 ||
-		name.find(".csv") == string::npos
-	)
-		return (false);
-	return (true);
+	if (name.length() < 5 \
+		|| name.find(".csv") == string::npos
+	) {
+		std::ostringstream stream;
+		stream << "Wrong file format: " << name;
+		err_exit(stream.str());
+	}
+}
+
+void	open_file(std::ifstream &in_file_stream, const char *filename)
+{
+	in_file_stream.open(filename, std::ios::in);
+	if (!in_file_stream.is_open()) {
+		std::ostringstream	error;
+		error << "Failed to open " << filename;
+		err_exit(error.str());
+	}
 }
 
 int	main(int argc, char **argv)
 {
-	std::ifstream	in_file_stream;
-
 	if (argc != 2) {
-		std::cout << "Usage: ./btc <database>" << std::endl;
-		return (1);
+		std::cout << "Usage: ./btc <second database>" << std::endl;
+		return 1;
 	}
 
-	in_file_stream.open(argv[1], std::ios::in);
-	if (!in_file_stream.is_open()) {
-		std::cout << RED << "Error: ";
-		std::cout << WHITE << "Failed to open " << argv[1];
-		std::cout << std::endl;
-	}
 
-	string	line;
-	std::map<string, float> input;
-	while (std::getline(in_file_stream, line)) {
-		string	date;
-		string	value;
-
-		// Properly terminate string (remove terminating CR)
-		line.erase(--line.end());
-
-		// if (line[line.length()] == '\0')
-		// 	std::cout << "line is NULL terminated" << std::endl;
-
-		if (!is_valid_line(line, date, value)) {
-			std::cout << RED << "Error: ";
-			std::cout << WHITE << "Bad format: ";
-			std::cout << line << std::endl;
-			std::cout << std::endl;
-			// std::cout << "date: |" << date << "|" << std::endl;
-			// std::cout << std::endl;
-			// std::cout << "value: |" << value << "|" << std::endl;
-			return (1);
-		}
-
-		input[date] = atof(value.c_str());
-		// std::cout << "date: |" << date << "|" << std::endl;
-		// std::cout << "value: |" << value << "|" << std::endl;
-		// std::cout << std::endl << std::endl;
-	}
-
-	try {
-		std::map<string, float> database = intake_db("data.csv");
-	}
-	catch (const char *error) {
-		std::cout << RED << "Error: ";
-		std::cout << WHITE << error << std::endl;
-	}
+	const t_db	own_db = parse_own_db(argv[1]);
+	const t_db	provided_db = parse_subject_db("data.csv");
 
 	// input file's line format must be "date | value"
 	// CHECK
@@ -76,6 +60,7 @@ int	main(int argc, char **argv)
 
 
 	// map as container?
+	// Yuh
 
 
 
@@ -88,7 +73,5 @@ int	main(int argc, char **argv)
 	lower date and not the upper one.
 	*/
 
-	in_file_stream.close();
-
-	return (0);
+	return EXIT_SUCCESS;
 }

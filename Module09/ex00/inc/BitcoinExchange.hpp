@@ -6,33 +6,42 @@
 # include <fstream>
 # include <iostream>
 # include <string>
-# include <cstring>
+# include <sstream>
+// # include <cstring>
 # include <exception>
 
-# include <sstream>
 # include <map>
 
 # include <cstdlib>
 
 using std::string;
 
-typedef struct s_date
-{
-	unsigned int	year;
-	unsigned int	month;
-	unsigned int	day;
-}	t_date;
+typedef std::map<string, float> t_db;
 
-t_date	split_date(const string& date);
+struct s_date {
+	u_int16_t	year;
+	u_int8_t	month;
+	u_int8_t	day;
+};
 
-bool	is_leap_year(unsigned int year);
+void	err_exit(const char *error);
+void	err_exit(const string &error);
 
-bool	is_pos_number(const string& s);
+const string&		find_nearest_date(const t_db &db, const string &date);
+const struct s_date	split_date(const string &date);
+const string		join_date(const struct s_date&);
 
+bool	is_leap_year(const u_int16_t year);
+// bool	is_pos_number(const string &s);
 bool	is_valid_value(const string &value);
 bool	is_valid_date(const string &date_str);
 bool	is_valid_line(const string &line, string &date, string &value);
 
-std::map<string, float>	intake_db(const string& filename);
+
+void		open_file(std::ifstream &in_file_stream, const char *filename);
+void		terminate_string(string &str);
+const t_db	parse_own_db(const char *filename);
+const t_db	parse_subject_db(const char *filename);
+
 
 #endif
