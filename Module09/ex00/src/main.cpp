@@ -20,21 +20,15 @@ void	check_csv(const char *filename)
 
 	if (name.length() < 5 \
 		|| name.find(".csv") == string::npos
-	) {
-		std::ostringstream stream;
-		stream << "Wrong file format: " << name;
-		err_exit(stream.str());
-	}
+	)
+		err_exit("Wrong file format: " + name);
 }
 
-void	open_file(std::ifstream &in_file_stream, const char *filename)
+void	open_file(std::ifstream &in_file_stream, const string &filename)
 {
-	in_file_stream.open(filename, std::ios::in);
-	if (!in_file_stream.is_open()) {
-		std::ostringstream	error;
-		error << "Failed to open " << filename;
-		err_exit(error.str());
-	}
+	in_file_stream.open(filename.c_str(), std::ios::in);
+	if (!in_file_stream.is_open())
+		err_exit("Failed to open " + filename);
 }
 
 int	main(int argc, char **argv)
@@ -44,9 +38,16 @@ int	main(int argc, char **argv)
 		return 1;
 	}
 
+	if (PRINT_DEBUG)
+		std::cout << "Started" << std::endl;
 
 	const t_db	own_db = parse_own_db(argv[1]);
-	const t_db	provided_db = parse_subject_db("data.csv");
+	if (PRINT_DEBUG)
+		std::cout << GREEN << "Parsed own db" << WHITE << std::endl;
+
+	const t_db	subject_db = parse_subject_db("data.csv");
+	if (PRINT_DEBUG)
+		std::cout << GREEN << "Parsed subject db" << WHITE << std::endl;
 
 	// input file's line format must be "date | value"
 	// CHECK
@@ -62,6 +63,11 @@ int	main(int argc, char **argv)
 	// map as container?
 	// Yuh
 
+	try {
+		output_results(subject_db, own_db);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 
 
 	/*

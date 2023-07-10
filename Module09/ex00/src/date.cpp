@@ -15,7 +15,7 @@ uint	n_of_hyphens(const string &date)
 	size_t	i = 0;
 
 	while (true) {
-		i = date.find('-', i);
+		i = date.find('-', i + 1);
 		if (i == string::npos)
 			break;
 		n++;
@@ -33,7 +33,7 @@ bool	is_valid_date(const string &date)
 	const size_t	first_sep_i = date.find_first_of('-');
 	const size_t	second_sep_i = date.find_last_of('-');
 	if (first_sep_i == 0 \
-		|| second_sep_i - first_sep_i != 2
+		|| second_sep_i - first_sep_i != 3
 	)
 		return false;
 
@@ -45,19 +45,22 @@ bool	is_valid_date(const string &date)
 	// std::cout << "month: " << month << std::endl;
 	// std::cout << "day: " << day << std::endl;
 
-	if ((is_leap_year(year) \
-		&& month == 2 \
-		&& day > 29) \
-		|| (!(is_leap_year(year) \
-		&& month == 2 \
-		&& day > 28))
-	)
-		return false;
-
 	if (!(1 <= month && month <= 12 \
 		&& 1 <= day && day <= 31) \
 	)
 		return false;
+
+	// std::cout << "day: " << day << std::endl;
+	// std::cout << "month: " << month << std::endl;
+	// std::cout << "year: " << year << std::endl;
+	// std::cout << "is_leap_year: " << is_leap_year(year) << std::endl;
+
+	if ((month == 2 && is_leap_year(year) && day > 29) \
+		|| (month == 2 && !is_leap_year(year) && day > 28) \
+		|| (!has_31_days(month) && day == 31)
+	)
+		return false;
+	// std::cout << "test\n";
 
 	return true;
 }
@@ -86,11 +89,14 @@ const string	join_date(const struct s_date &date)
 	return stream.str();
 }
 
-const string	&find_nearest_date(const t_db &db, const string &date)
+const string	find_nearest_date(const t_db &db, string date)
 {
-	(void)db;
-	(void)date;
-	return NULL;
+	while (db.find(date) == db.end()) {
+		date = decrement_date(date);
+		if (date.empty())
+			return "";
+	}
+	return date;
 }
 
 bool			has_31_days(const u_int8_t month)
@@ -104,9 +110,12 @@ bool			has_31_days(const u_int8_t month)
 			|| month == 12);
 }
 
-const string	&decrement_date(const string &date)
+const string	decrement_date(const string &date)
 {
 	struct s_date	split = split_date(date);
+
+	if (date == lowest_date)
+		return "";
 
 	if (split.day != 1) {
 		split.day--;
@@ -115,19 +124,23 @@ const string	&decrement_date(const string &date)
 
 	if (split.month != 1) {
 		split.month--;
+		if (split.month == 2) {
+			if (is_leap_year(split.year))
+				split.day = 29;
+			else
+				split.day = 28;
+		}
+		else if (has_31_days(split.month))
+			split.day = 31;
+		else
+			split.day = 30;
+
 		return join_date(split);
 	}
 
-
-	if (has_31_days(split.month))
-		split.day =
-	else if (split.month == 2) {
-		if (is_leap_year(split.year))
-			split.day = 29;
-		else
-			split.day = 28;
-	}
 	split.day = 31;
 	split.month = 12;
 	split.year--;
+
+	return join_date(split);
 }
