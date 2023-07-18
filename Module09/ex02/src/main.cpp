@@ -27,7 +27,7 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2) {
+	if (argc < 2) {
 		std::cerr << "Usage: ./PmergeMe <expression>" << std::endl;
 		return EXIT_FAILURE;
 	}
@@ -39,17 +39,19 @@ int	main(int argc, char **argv)
 
 		for (int i = 1; i < argc; i++) {
 			const string	tmp(argv[i]);
+
 			for (size_t j = 0; j < tmp.length(); j++)
 				if (!isdigit(tmp[j]))
 					throw std::runtime_error("Bad input: " + tmp);
+
 			input.push_back(atol(tmp.c_str()));
 		}
 
-		// for (std::iterator)
-		// 	std::cout << *it << std::endl;
+		for (std::vector<size_t>::iterator it = input.begin(); it != input.end(); it++)
+			std::cout << *it << std::endl;
 
 
-		PmergeMe	pmergeme(argv[1]);
+		PmergeMe	pmergeme(input);
 		pmergeme.split_vec();
 	// 	pmergeme.sort();
 

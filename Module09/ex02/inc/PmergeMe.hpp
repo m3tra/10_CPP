@@ -37,7 +37,7 @@ private:
 	std::vector<size_t>	_vec;
 
 public:
-	PmergeMe(const string &sequence);
+	PmergeMe(const std::vector<size_t> &input);
 	PmergeMe(const PmergeMe &other);
 	PmergeMe& operator=(const PmergeMe &other);
 	~PmergeMe();
