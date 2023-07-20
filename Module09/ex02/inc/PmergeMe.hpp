@@ -12,49 +12,46 @@
 # include <iostream>
 # include <string>
 # include <cstdlib>
-// # include <sstream>
-// # include <iterator>
+# include <sstream>
 # include <stdexcept>
+# include <sys/time.h>
+# include <bits/stdc++.h>
 
 # include <vector>
-# include <list>
 # include <deque>
 
 using std::string;
 
 class PmergeMe {
 private:
-	string				_input_str;
-	std::vector<size_t>	_input_vec;
-	size_t				_n_elements;
-
-	double				_time1; // list?
-	double				_time2; // deque?
-
-	std::list<size_t>	_lst;
-	std::deque<size_t>	_queue;
-
 	std::vector<size_t>	_vec;
+	std::deque<size_t>	_deq;
+
+	struct timeval		_vec_start;
+	struct timeval		_vec_end;
+	struct timeval		_deq_start;
+	struct timeval		_deq_end;
 
 public:
-	PmergeMe(const std::vector<size_t> &input);
+	PmergeMe();
 	PmergeMe(const PmergeMe &other);
 	PmergeMe& operator=(const PmergeMe &other);
 	~PmergeMe();
 
-	void	sort() throw(std::runtime_error);
-	double	getTime1() const;
-	double	getTime2() const;
+	void	sort_vec(const size_t start, const size_t end);
+	void	insert_vec(const size_t start, const size_t end);
+	void	merge_vec(const size_t start, const size_t end);
 
-	void	split_vec();
-	void	insertion(std::vector<size_t> remaining);
+	void	sort_deq(const size_t start, const size_t end);
+	void	insert_deq(const size_t start, const size_t end);
+	void	merge_deq(const size_t start, const size_t end);
 
-	// void	solve(const string &sequence) throw(std::runtime_error);
+	void	add_element(const size_t elem);
+	void	print_vec() const;
+	void	print_deq() const;
+	void	print_time() const;
+	void	sort();
 
-	class BadInputError : public std::runtime_error {
-	public:
-		BadInputError(const string &err);
-	};
 };
 
 #endif
